@@ -90,7 +90,7 @@
 
 #ppc {
     font-size: 32px;
-    margin-bottom: 70px;
+    margin: 100px 0;
 }
 
 #ppc h2 {
@@ -110,17 +110,23 @@
 
 #team {
     background: #eeeeee;
-    padding: 50px;
+    padding: 60px;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 #team  h2 {
     font-size: 64px;
     text-align: center;
     color: #007765;
 }
 
-.team_card {
-    margin: 16px 15px;
-}
 
 .team_card img {
     width: 168px;
@@ -143,6 +149,10 @@
 .footer {
     background: #333333;
     color: #ffffff;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     bottom: 0;
 }
 
@@ -151,3 +161,50 @@
     padding: 40px 300px;
     text-align: center;
 }
+
+@media (max-width: 1024px) {
+    .container { 
+       width: 100%;
+    } 
+    .logo {
+        width: 50%;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar_link {
+        float: none;
+        display: inline-block;
+        text-align: center;
+    }
+    .footer_text {
+        font-size: 18px;
+        padding: 0;
+    }
+
+  }
+
+  @media (max-width: 360px) {
+
+    .container { 
+        width: 100%;
+    } 
+    .logo {
+        width: 50%;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar_link {
+        float: none;
+        display: inline-block;
+        text-align: center;
+    }
+    .footer_text {
+        font-size: 18px;
+        padding: 0;
+    }
+
+  }
