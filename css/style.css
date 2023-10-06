@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container { 
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
@@ -12,7 +16,6 @@
     padding: 15px 0;
     position: fixed;
     top: 0;
-    box-sizing: border-box;
 }
 
 .img-header {
@@ -46,8 +49,7 @@
     clear: both;
   }
 
-.Jumbotron {
-    box-sizing: border-box;
+.Jumbotron {    
     width: 100%;
     padding: 120px 0;
     background: url(../image1.png) 0 0 / cover no-repeat;
@@ -61,9 +63,10 @@
     font-size: 72px;
 }
 
-#problem {
+#problem, #ppc, #team {
     font-size: 32px;
-    padding: 50px 0;
+    padding: 80px 0;
+    background-clip: padding-box;
 }
 
 .hero {
@@ -82,11 +85,6 @@
     margin-top: 50px;
 }
 
-#ppc {
-    font-size: 32px;
-    margin: 100px 0;
-}
-
 .subheading {
     font-size: 64px;
     text-align: center;
@@ -102,21 +100,24 @@
 
 #team {
     background: #eeeeee;
-    padding: 60px;
 }
 
 .team_card_selection {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-items: center;
+    gap: 10px;
 }
-
 
 .team_card_img {
     width: 168px;
     margin: 20px 75px;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
 }
  
 .name {
@@ -148,13 +149,6 @@
     text-align: center;
 }
 
-#ppc:before, #team:before, #problem:before {
-    display: block;
-	content: "";
-	height: 80px;
-	margin: -80px 0 0;
-}
-
 @media (max-width: 1024px) {
 
     .container { 
@@ -181,27 +175,29 @@
     .footer_text {
         padding: 10px 200px
     }
+
+    .team_card_selection {
+        grid-template-columns: repeat(2, 50%);
+    }
   }
 
   @media (max-width: 360px) {
 
     .container {
         margin: 0 auto;
+        padding: 5px 0;
     }
 
-    .logo {
-        width: 50%;
-        float: none;
-        display: flex;
-        justify-content: center;
+    .img-header {
+        width: 100%;
     }
 
     .navbar_link {
-        float: none;
-        display: flex;
-        flex-direction: column;
         padding: 0;
-        margin-left: -150px; 
+        margin: 0;
+    }
+    .header_link a {
+        font-size: 18px;
     }
 
     .footer_text {
@@ -209,5 +205,14 @@
     }
     .subheading {
         font-size: 40px;
+    }
+
+    .team_card_selection {
+        grid-template-columns: 100%;
+    }
+
+    #problem, #ppc, #team {
+        padding: 120px 0;
+        margin: -130px  0;
     }
 }
